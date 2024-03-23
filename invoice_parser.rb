@@ -1,6 +1,6 @@
 # invoice_parser.rb
 def parse_invoices(invoice_data)
-    pattern = /^(\d{4}-\d{2}-\d{2}) - (\w+) - ([\w\s]+) - (\$\d+)$/
+    pattern = /(\d{4}-\d{2}-\d{2}) ([^-]*) ([^-]*)  \$([\d]+(?:\.[\d]+)?)/
     invoice_data.each_line do |line|
       match_data = line.match(pattern)
       if match_data
